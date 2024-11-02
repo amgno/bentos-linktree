@@ -49,6 +49,9 @@ body {
     height: 150px;
     border-radius: 50%;
     margin-bottom: 1rem;
+    background-image: url(./profileimage.JPG);
+    background-size: cover;
+    background-position: center;
 }
 
 .profile h1 {
@@ -57,15 +60,16 @@ body {
 }
 
 .profile p {
-    color: #666;
+    color: #ffffff;
 }
 
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, minmax(150px, auto));
+    grid-template-rows: repeat(3, 1fr);
     gap: 1rem;
     width: 100%;
+    height: 100%;
 }
 
 .bento-item {
@@ -80,6 +84,9 @@ body {
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(15px);
+    width: 100%;
+    height: 100%;
+    min-height: unset;
 }
 
 .bento-item:hover {
@@ -163,7 +170,7 @@ body {
 
 .page-container {
     display: flex;
-    min-height: 80vh;
+    height: 80vh;
     width: 90vw;
     max-width: 1800px;
     padding: 2rem;
@@ -175,18 +182,19 @@ body {
 
 .profile-container {
     width: 30%;
-    padding: 2rem;
-    background-color: rgba(45, 45, 45, 0.7);
-    border-radius: 1rem;
-    height: auto;
-    backdrop-filter: blur(15px);
+    height: 100%;
     display: flex;
     align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(15px);
+    background-color: #00000006;
 }
 
 .bento-container {
     width: 70%;
-    padding-top: 0;
+    height: 100%;
+    display: flex;
 }
 
 .profile {
@@ -212,9 +220,10 @@ body {
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, minmax(150px, auto));
+    grid-template-rows: repeat(3, 1fr);
     gap: 1rem;
     width: 100%;
+    height: 100%;
 }
 
 .theme-toggle {
@@ -306,4 +315,108 @@ body {
     border-width: 5px;
     border-style: solid;
     border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+}
+
+/* Update existing media query and add new mobile styles */
+@media (max-width: 768px) {
+    .page-container {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .profile-container {
+        width: 100%;
+        height: auto;
+        padding: 1.5rem;
+    }
+
+    .bento-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+        grid-template-rows: auto;
+        gap: 0.75rem;
+    }
+
+    /* Adjust bento items for mobile */
+    .bento-item {
+        padding: 1rem;
+        min-height: 100px; /* Set minimum height for mobile */
+    }
+
+    .bento-item i {
+        font-size: 2rem; /* Slightly smaller icons on mobile */
+    }
+
+    /* Adjust grid spans for mobile */
+    .bento-item.large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .bento-item.medium {
+        grid-column: span 2;
+    }
+
+    .bento-item.tall {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+
+    /* Adjust profile content */
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile h1 {
+        font-size: 1.25rem;
+    }
+
+    .additional-info {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Adjust tooltip position for mobile */
+    .tooltip {
+        bottom: -30px;
+        font-size: 12px;
+    }
+}
+
+/* Add even smaller screen adjustments */
+@media (max-width: 480px) {
+    .page-container {
+        width: 100vw;
+        padding: 0.75rem;
+    }
+
+    .bento-grid {
+        gap: 0.5rem;
+    }
+
+    .profile h1 {
+        font-size: 1.1rem;
+    }
+
+    .additional-info {
+        font-size: 0.8rem;
+    }
+}
+
+/* Fix video background on mobile */
+@media (max-width: 768px) {
+    .video-background {
+        display: none; /* Optional: hide video on mobile for better performance */
+    }
+    
+    body {
+        background: #1a1a1a; /* Fallback color when video is hidden */
+    }
 }
