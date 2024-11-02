@@ -72,31 +72,14 @@ body {
     color: var(--text-color);
     transition: all 0.3s ease;
     border: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .bento-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.bento-item h2 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.bento-item p {
-    font-size: 0.9rem;
-    color: var(--secondary-text);
-}
-
-.large {
-    grid-column: 1 / -1;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
-
-.large p {
-    color: rgba(255,255,255,0.9);
 }
 
 .bento-item.large {
@@ -110,6 +93,44 @@ body {
 
 .bento-item.tall {
     grid-row: span 2;
+}
+
+.bento-item.twitter {
+    background: #1DA1F2;
+    color: white;
+}
+
+.bento-item.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+}
+
+.bento-item.steam {
+    background: #171a21;
+    color: white;
+}
+
+.bento-item.discord {
+    background: #5865F2;
+    color: white;
+}
+
+.bento-item.youtube {
+    background: #FF0000;
+    color: white;
+}
+
+.bento-item.twitch {
+    background: #6441A4;
+    color: white;
+}
+
+.bento-item i {
+    font-size: 2.5rem;
+}
+
+.bento-item h2, .bento-item p {
+    display: none;
 }
 
 @media (max-width: 600px) {
