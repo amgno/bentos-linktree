@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
 <body>
     <div class="page-container">
         <div class="profile-container">
+            <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
             <div class="profile">
                 <img src="https://placeholder.co/150" alt="Profile Picture" class="profile-pic">
                 <h1>@yourusername</h1>
@@ -28,12 +29,12 @@
                     <p>Check out my latest project</p>
                 </a>
                 
-                <a href="#" class="bento-item">
+                <a href="#" class="bento-item medium">
                     <h2>🐦 Twitter</h2>
                     <p>Follow my updates</p>
                 </a>
                 
-                <a href="#" class="bento-item">
+                <a href="#" class="bento-item tall">
                     <h2>📸 Instagram</h2>
                     <p>See my photos</p>
                 </a>
@@ -55,5 +56,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                html.setAttribute('data-theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+            }
+        }
+    </script>
 </body>
 </html> 
